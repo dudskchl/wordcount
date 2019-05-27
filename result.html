@@ -1,0 +1,47 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'wordcount/style.css' %}">
+<head>
+    <style>
+         body {
+            text-align: center;
+            margin-top: 250px;
+        }
+        a{
+            text-decoration: none;
+            color:white;
+        }
+        h1{
+            color:white;
+            
+        }
+        h2{
+            color:white;
+        }
+        .bottom{
+            color:white;
+        }
+    </style>
+</head>
+<body>
+   <div class="top"> 
+    <br><br><br>
+    <h1>Your Text = {{total}} words</h1>
+    <br><br><br>
+   </div>
+  <div class="bottom"> 
+    <h2>Text: </h2>
+    {{full}}
+
+    <h2>Word Count: </h2>
+    {% for word, howmany in dictionary%}
+
+    {{word}} : {{howmany}}
+    <br>
+    {%endfor%}
+    <br><br>
+    <a href="{%url 'home'%}">  redo</a>
+    <br>
+  </div>
+
+</body>
